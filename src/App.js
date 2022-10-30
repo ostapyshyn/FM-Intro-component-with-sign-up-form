@@ -1,10 +1,14 @@
 import './App.css';
+import Form from './components/Form';
 import InfoBlock from './components/InfoBlock';
+import InfoPanel from './components/InfoPanel/InfoPanel';
 
 function App() {
   return (
     <div className="App">
-      <InfoBlock />
+      {/* <InfoPanel />
+      <InfoBlock /> */}
+      <Form />
     </div>
   );
 }

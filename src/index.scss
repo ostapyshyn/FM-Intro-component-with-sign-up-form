@@ -64,7 +64,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  background-image: url(./assets/images/bg-intro-desktop.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   background-color: $RED;
+  background-blend-mode: multiply;
 }
 
 code {
