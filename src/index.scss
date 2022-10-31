@@ -69,7 +69,7 @@ body {
   background-position: center center;
   background-size: cover;
   background-color: $RED;
-  background-blend-mode: multiply;
+  background-blend-mode: inherit;
 }
 
 code {

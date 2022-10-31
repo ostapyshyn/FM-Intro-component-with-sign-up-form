@@ -4,6 +4,39 @@ section {
   max-width: 540px;
   width: 100%;
 
+  .fname,
+  .lName,
+  .email,
+  .password {
+    position: relative;
+  }
+
+  svg {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  input {
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.25px;
+    color: $DARK-BLUE;
+    padding-left: 32px;
+    padding-block: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none !important;
+      border: 1px solid $BLUE;
+      opacity: 1;
+    }
+  }
+
   button {
     font-weight: 600;
     font-size: 15px;
@@ -17,6 +50,11 @@ section {
     border: none;
     padding-block: 15px;
     margin-bottom: 8px;
+    cursor: pointer;
+    &:active {
+      transform: scale(0.98);
+      background: #77e2b3;
+    }
   }
 
   form {
@@ -26,6 +64,19 @@ section {
     border-radius: 10px;
     padding-block: 40px;
     padding-inline: 40px;
+    .span_active {
+      display: block;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 16px;
+      text-align: right;
+      color: $RED;
+      margin-bottom: 19px;
+    }
+    .span_disabled {
+      display: none;
+    }
   }
   .terms {
     font-weight: 500;
