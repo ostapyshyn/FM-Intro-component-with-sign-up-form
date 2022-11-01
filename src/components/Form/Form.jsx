@@ -4,10 +4,12 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import styles from './Form.module.scss';
 import '../../index.scss';
+import { useNavigate } from 'react-router-dom';
 
 import { ReactComponent as Error } from '../../assets/images/icon-error.svg';
 
 const Form = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -32,6 +34,7 @@ const Form = () => {
     onSubmit: (values) => {
       console.log('form submitted');
       console.log(values);
+      navigate('/success', { state: values });
       // router.push({ pathname: '/success', query: values });
     },
   });
