@@ -70,6 +70,10 @@ body {
   background-size: cover;
   background-color: $RED;
   background-blend-mode: inherit;
+  padding-inline: 24px;
+  @include mq(900px) {
+    min-height: 0;
+  }
 }
 
 code {

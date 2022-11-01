@@ -8,6 +8,12 @@ section {
     letter-spacing: -0.520833px;
     color: $WHITE;
     margin-bottom: 25px;
+
+    @include mq(700px) {
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: -0.291667px;
+    }
   }
 
   p {
@@ -15,5 +21,9 @@ section {
     font-size: 16px;
     line-height: 26px;
     color: $WHITE;
+  }
+
+  @include mq(900px) {
+    text-align: center;
   }
 }

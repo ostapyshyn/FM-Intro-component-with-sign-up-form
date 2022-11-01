@@ -17,7 +17,21 @@ section {
     right: 16px;
   }
 
+  .input_bad {
+    border: 2px solid $RED;
+    padding-block: 13px;
+    &:focus {
+      border: 2px solid $RED;
+      padding-block: 13px;
+    }
+  }
+
+  .input_normal {
+    border: 1px solid #dedede;
+  }
+
   input {
+    box-sizing: border-box;
     width: 100%;
     font-weight: 600;
     font-size: 14px;
@@ -26,13 +40,14 @@ section {
     color: $DARK-BLUE;
     padding-left: 32px;
     padding-block: 14px;
-    margin-bottom: 20px;
-    border: 1px solid #dedede;
+    margin-bottom: 2px;
+    border: none;
     border-radius: 5px;
 
     &:focus {
-      outline: none !important;
       border: 1px solid $BLUE;
+      outline: none;
+      //border: 1px solid $BLUE;
       opacity: 1;
     }
   }
@@ -64,6 +79,12 @@ section {
     border-radius: 10px;
     padding-block: 40px;
     padding-inline: 40px;
+
+    @include mq(900px) {
+      text-align: center;
+      padding-inline: 24px;
+      padding-block: 24px;
+    }
     .span_active {
       display: block;
       font-style: italic;

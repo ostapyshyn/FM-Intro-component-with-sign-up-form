@@ -16,4 +16,8 @@
   span {
     font-weight: 400;
   }
+
+  @include mq(500px) {
+    padding-inline: 66px;
+  }
 }

@@ -46,7 +46,11 @@ const Form = () => {
             {/* First Name input field */}
             <div className={styles.fname}>
               <input
-                className={styles.input}
+                className={` ${
+                  formik.touched.firstName && formik.errors.firstName
+                    ? styles.input_bad
+                    : styles.input_normal
+                } `}
                 type="text"
                 name="firstName"
                 placeholder="First Name"
@@ -55,18 +59,20 @@ const Form = () => {
                 onBlur={formik.handleBlur}
                 autoComplete="off"
                 style={{
-                  border:
+                  marginBottom:
+                    formik.touched.firstName && formik.errors.firstName ? `7px` : `20px`,
+                  color:
                     formik.touched.firstName && formik.errors.firstName
-                      ? `2px solid #FF7979`
-                      : `1px solid #dedede`,
-                  marginBottom: formik.errors.firstName ? `6px` : `20px`,
-                  color: formik.errors.firstName ? `#FF7979` : `hsl(249, 10%, 26%)`,
+                      ? `#FF7979`
+                      : `hsl(249, 10%, 26%)`,
                 }}
               />
               {formik.touched.firstName && formik.errors.firstName && <Error />}
               <span
                 className={`${
-                  formik.errors.firstName ? styles.span_active : styles.span_disabled
+                  formik.touched.firstName && formik.errors.firstName
+                    ? styles.span_active
+                    : styles.span_disabled
                 } `}>
                 {formik.touched.firstName && formik.errors.firstName ? formik.errors.firstName : ''}
               </span>
@@ -75,7 +81,11 @@ const Form = () => {
             {/* Last Name input field */}
             <div className={styles.lName}>
               <input
-                className={styles.input}
+                className={` ${
+                  formik.touched.lastName && formik.errors.lastName
+                    ? styles.input_bad
+                    : styles.input_normal
+                } `}
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
@@ -84,18 +94,19 @@ const Form = () => {
                 onBlur={formik.handleBlur}
                 autoComplete="off"
                 style={{
-                  border:
+                  marginBottom: formik.touched.lastName && formik.errors.lastName ? `7px` : `20px`,
+                  color:
                     formik.touched.lastName && formik.errors.lastName
-                      ? `2px solid #FF7979`
-                      : `1px solid #dedede`,
-                  marginBottom: formik.errors.lastName ? `6px` : `20px`,
-                  color: formik.errors.lastName ? `#FF7979` : `hsl(249, 10%, 26%)`,
+                      ? `#FF7979`
+                      : `hsl(249, 10%, 26%)`,
                 }}
               />
               {formik.touched.lastName && formik.errors.lastName && <Error />}
               <span
                 className={`${
-                  formik.errors.lastName ? styles.span_active : styles.span_disabled
+                  formik.touched.lastName && formik.errors.lastName
+                    ? styles.span_active
+                    : styles.span_disabled
                 } `}>
                 {formik.touched.lastName && formik.errors.lastName ? formik.errors.lastName : ''}
               </span>
@@ -103,7 +114,11 @@ const Form = () => {
             {/* Email input field */}
             <div className={styles.email}>
               <input
-                className="border-2 border-gray-500 p-2 rounded-md w-1/2 focus:border-teal-500 focus:ring-teal-500"
+                className={` ${
+                  formik.touched.email && formik.errors.email
+                    ? styles.input_bad
+                    : styles.input_normal
+                } `}
                 type="email"
                 name="email"
                 placeholder="Email Address"
@@ -112,24 +127,29 @@ const Form = () => {
                 onBlur={formik.handleBlur}
                 autoComplete="off"
                 style={{
-                  border:
-                    formik.touched.email && formik.errors.email
-                      ? `2px solid #FF7979`
-                      : `1px solid #dedede`,
-                  marginBottom: formik.errors.email ? `6px` : `20px`,
-                  color: formik.errors.email ? `#FF7979` : `hsl(249, 10%, 26%)`,
+                  marginBottom: formik.touched.email && formik.errors.email ? `7px` : `20px`,
+                  color:
+                    formik.touched.email && formik.errors.email ? `#FF7979` : `hsl(249, 10%, 26%)`,
                 }}
               />
               {formik.touched.email && formik.errors.email && <Error />}
               <span
-                className={`${formik.errors.email ? styles.span_active : styles.span_disabled} `}>
+                className={`${
+                  formik.touched.email && formik.errors.email
+                    ? styles.span_active
+                    : styles.span_disabled
+                } `}>
                 {formik.touched.email && formik.errors.email ? formik.errors.email : ''}
               </span>
             </div>
             {/* Password input field */}
             <div className={styles.password}>
               <input
-                className="border-2 border-gray-500 p-2 rounded-md w-1/2 focus:border-teal-500 focus:ring-teal-500"
+                className={` ${
+                  formik.touched.password && formik.errors.password
+                    ? styles.input_bad
+                    : styles.input_normal
+                } `}
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -138,17 +158,15 @@ const Form = () => {
                 onBlur={formik.handleBlur}
                 autoComplete="off"
                 style={{
-                  border:
-                    formik.touched.password && formik.errors.password
-                      ? `2px solid #FF7979`
-                      : `1px solid #dedede`,
-                  marginBottom: formik.errors.password ? `6px` : `20px`,
+                  marginBottom: formik.touched.password && formik.errors.password ? `7px` : `20px`,
                 }}
               />
               {formik.touched.password && formik.errors.password && <Error />}
               <span
                 className={`${
-                  formik.errors.password ? styles.span_active : styles.span_disabled
+                  formik.touched.password && formik.errors.password
+                    ? styles.span_active
+                    : styles.span_disabled
                 } `}>
                 {formik.touched.password && formik.errors.password ? formik.errors.password : ''}
               </span>
