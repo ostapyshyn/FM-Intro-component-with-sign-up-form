@@ -35,12 +35,11 @@ const Form = () => {
       console.log('form submitted');
       console.log(values);
       navigate('/success', { state: values });
-      // router.push({ pathname: '/success', query: values });
     },
   });
 
   return (
-    <section className="  h-screen items-center flex justify-center">
+    <section className={styles.main_form}>
       <form
         onSubmit={formik.handleSubmit}
         className="bg-white flex rounded-lg w-1/2 font-latoRegular">

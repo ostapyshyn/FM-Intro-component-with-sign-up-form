@@ -1,6 +1,7 @@
 @import '../../index.scss';
 
-section {
+.info_block {
+  max-width: 525px;
   h1 {
     font-weight: 700;
     font-size: 50px;
