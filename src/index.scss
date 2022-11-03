@@ -74,6 +74,9 @@ body {
   @include mq(900px) {
     min-height: 0;
   }
+  @include mq(500px) {
+    background-image: url(./assets/images/bg-intro-mobile.png);
+  }
 }
 
 code {
